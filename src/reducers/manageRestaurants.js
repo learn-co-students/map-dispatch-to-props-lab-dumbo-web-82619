@@ -1,6 +1,8 @@
-export default function manageRestaurants(state = {
+const initialState = {
   restaurants: []
-}, action) {
+}
+
+const manageRestaurants = (state = initialState, action) => {
   switch (action.type) {
 
     case 'ADD_RESTAURANT':
@@ -8,9 +10,11 @@ export default function manageRestaurants(state = {
         ...state,
         restaurants: [...state.restaurants, action.restaurant]
       }
-
+    
     default:
-      return state;
+      return state
 
   }
-};
+}
+
+export default manageRestaurants
